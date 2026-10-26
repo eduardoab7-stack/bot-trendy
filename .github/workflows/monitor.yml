@@ -1,0 +1,24 @@
+name: Monitor Calendario Trendy
+on:
+  schedule:
+    - cron: '*/7 * * * *'  # Se ejecuta cada 7 minutos
+  workflow_dispatch:      # Permite ejecutarlo manualmente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar dependencias
+        run: |
+          pip install playwright requests
+          playwright install chromium
+      - name: Ejecutar monitor
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: python bot.py
