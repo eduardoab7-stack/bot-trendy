@@ -17,6 +17,7 @@ jobs:
         run: |
           pip install playwright requests
           playwright install chromium
+          playwright install-deps chromium
       - name: Ejecutar monitor
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
