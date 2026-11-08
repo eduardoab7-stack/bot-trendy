@@ -41,7 +41,7 @@ def revisar_pagina():
             texto_pagina = page.inner_text("body").lower()
             
             # Buscamos las palabras clave
-            if "calendario de adviento 2026" in texto_pagina or "wonderland" in texto_pagina or "calendario de adviento de trendy 2026" in texto_pagina or "calendario de adviento 2026: wonderland" in texto_pagina or "calendario de adviento 2026 Wonderland" in texto_pagina:
+            if "calendario de adviento 2026" in texto_pagina or "wonderland" in texto_pagina or "calendario de adviento de trendy 2026" in texto_pagina or "calendario de adviento 2026: wonderland" in texto_pagina or "calendario de adviento 2026 Wonderland" in texto_pagina or "trendy" in texto_pagina:
                 print("🎉 ¡Se encontró la palabra clave en la página!")
                 enviar_alerta()
             else:
