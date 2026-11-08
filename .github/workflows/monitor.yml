@@ -1,7 +1,5 @@
 name: Monitor Calendario Trendy
 on:
-  schedule:
-    - cron: '*/7 * * * *'  # Se ejecuta cada 7 minutos
   workflow_dispatch:      # Permite ejecutarlo manualmente
 
 jobs:
